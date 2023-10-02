@@ -4,7 +4,7 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 class QuizPageApp(App):
     pass
 
-class LoginManager(ScreenManager):
+class QuizManager(ScreenManager):
     pass
 
 class Question1Screen(Screen):

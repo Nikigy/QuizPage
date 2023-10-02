@@ -1,8 +1,12 @@
-ScreenManager:
+QuizManager:
     Question1Screen:
+        name: "question1"
     Question2Screen:
+        name: "question2"
     CorrectScreen:
+        name: "correct"
     IncorrectScreen:
+        name: "incorrect"
 
 <Question1Screen>:
     canvas.before:
@@ -36,7 +40,6 @@ ScreenManager:
                 background_color: 1, 1, 1, 0.5
 
 <Question2Screen>:
-    name: "question2"
     BoxLayout:
         orientation: "vertical"
         spacing: 5
@@ -58,7 +61,6 @@ ScreenManager:
             pos: self.pos
             size: self.size
             source: "happyrivers.jpeg"
-    name: "correct"
     BoxLayout:
         orientation: "vertical"
         spacing: 5
@@ -76,7 +78,6 @@ ScreenManager:
             pos: self.pos
             size: self.size
             source: "sadrivers.jpeg"
-    name: "incorrect"
     BoxLayout:
         orientation: "vertical"
         spacing: 5
@@ -84,6 +85,6 @@ ScreenManager:
             text: "Incorrect!"
             font_size: 30
         Button:
-            text: "Next Question"
+            text: "RESTART!!!!"
             font_size: 30
-            on_press: root.manager.current = "question2"
+            on_press: root.manager.current = "question1"
