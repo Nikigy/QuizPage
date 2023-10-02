@@ -1,0 +1,89 @@
+ScreenManager:
+    Question1Screen:
+    Question2Screen:
+    CorrectScreen:
+    IncorrectScreen:
+
+<Question1Screen>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "rivers.jpeg"
+    BoxLayout:
+        orientation: "vertical"
+        spacing: 5
+        Label:
+            text: "What is the main singer for Weezer?"
+            font_size: 30
+            color: 0, 0, 1, 1
+        BoxLayout:
+            orientation: "horizontal"
+            Button:
+                text: "Rivers Cuomo"
+                font_size: 30
+                on_press: root.manager.current = "correct"
+                background_color: 1, 1, 1, 0.5
+            Button:
+                text: "Patrick Wilson"
+                font_size: 30
+                on_press: root.manager.current = "incorrect"
+                background_color: 1, 1, 1, 0.5
+            Button:
+                text: "Brian Bell"
+                font_size: 30
+                on_press: root.manager.current = "incorrect"
+                background_color: 1, 1, 1, 0.5
+
+<Question2Screen>:
+    name: "question2"
+    BoxLayout:
+        orientation: "vertical"
+        spacing: 5
+        Label:
+            text: "What is weezer's second album?"
+            font_size: 30
+        TextInput:
+            text: "put here"
+            id: answer
+            font_size: 30
+
+        Button:
+            text: "Submit"
+            on_press: root.check_answer()
+
+<CorrectScreen>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "happyrivers.jpeg"
+    name: "correct"
+    BoxLayout:
+        orientation: "vertical"
+        spacing: 5
+        Label:
+            text: "Correct!"
+            font_size: 30
+        Button:
+            text: "Next Question"
+            font_size: 30
+            on_press: root.manager.current = "question2"
+
+<IncorrectScreen>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "sadrivers.jpeg"
+    name: "incorrect"
+    BoxLayout:
+        orientation: "vertical"
+        spacing: 5
+        Label:
+            text: "Incorrect!"
+            font_size: 30
+        Button:
+            text: "Next Question"
+            font_size: 30
+            on_press: root.manager.current = "question2"

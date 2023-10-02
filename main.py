@@ -11,7 +11,13 @@ class Question1Screen(Screen):
     pass
 
 class Question2Screen(Screen):
-    pass
+    def check_answer(self):
+        user_answer = self.ids.answer.text.lower()  # get the user's input and convert to lowercase
+        correct_answer = "pinkerton" 
+        if user_answer == correct_answer:
+            self.manager.current = "correct"
+        else:
+            self.manager.current = "incorrect"
 
 class CorrectScreen(Screen):
     pass
